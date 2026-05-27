@@ -1,5 +1,12 @@
 import streamlit as st
-import google.generativeai as genai
+# Initialize the client
+    client = genai.Client(api_key=api_key)
+    
+    # Generate content using the client
+    response = client.models.generate_content(
+        model='gemini-2.5-flash', 
+        contents=prompt
+    )
 from pypdf import PdfReader
 
 # Page Configuration with Credux Branding
